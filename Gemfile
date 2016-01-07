@@ -27,6 +27,13 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+gem 'font-awesome-rails'
+
+gem 'paperclip'
+
+gem 'better_errors'
+gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

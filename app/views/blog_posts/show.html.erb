@@ -1,37 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog_post.title %>
-</p>
+<div id="center-it" class="panel-body">
+	<p><%= image_tag @blog_post.avatar.url %></p>
+	<p><%= @blog_post.blog_entry %></p>
+	<p>
+		by: <%= @blog_post.user.username %>
+		Posted at: <%= @blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %>
+	</p>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @blog_post.author %>
-</p>
-
-<p>
-	Posted at: <%= @blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %>
-</p>
-
-<p>
-  <strong>Blog entry:</strong>
-  <%= @blog_post.blog_entry %>
-</p>
 
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+<%= link_to 'Destroy', edit_blog_post_path(@blog_post), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+
+<div class="well">
+<h4>Comments</h4>
+</div>
 
 <div>
 	<%= render 'comments/form' %>
 </div>
 
-<div class="panel panel-default">
-	<div class="panel-header">
-		<h4>Comments</h4>
-	</div>
-	<%= @blog_post.comments.each do |comment| %>
+
+<%= @blog_post.comments.each do |comment| %>
+	<div class="panel panel-default">
 		<div class="panel-body">
-			<p><strong><%= comment.author %></strong> said: </p>
+			<p><strong><%= comment.user.username %></strong> said: </p>
 			<p><%= comment.comment_entry %></p>
 		</div>
 	<% end %>
