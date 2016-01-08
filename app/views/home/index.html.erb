@@ -1,1 +1,37 @@
-<%= @blog_post %>
+
+	<div id="center-it" class="panel-body">
+	<p><%= image_tag @blog_post.avatar.url, width: 700 %></p>
+	<p><%= @blog_post.blog_entry %></p>
+	<p>
+		by: <%= @blog_post.user.username %>
+		Posted at: <%= @blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %>
+	</p>
+</div>
+
+
+<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+<%= link_to 'Destroy', edit_blog_post_path(@blog_post), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+
+<div class="well">
+<h4>Comments</h4>
+</div>
+
+<div>
+	<%= render 'comments/form' %>
+</div>
+
+
+<%= @blog_post.comments.each do |comment| %>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<p><strong><%= comment.user.username %></strong> said: </p>
+			<p><%= comment.comment_entry %></p>
+		</div>
+	<% end %>
+</div>
+
+
+<%= link_to 'Back', blog_posts_path %>
+<%= link_to 'New Post', new_blog_post_path %>

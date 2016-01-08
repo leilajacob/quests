@@ -9,10 +9,10 @@
 	</p>
 </div>
 
-
+<% if can? :update, @blog_post %>
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <%= link_to 'Destroy', edit_blog_post_path(@blog_post), method: :delete, data: { confirm: 'Are you sure?' } %>
-
+<% end %> 
 
 
 <div class="well">

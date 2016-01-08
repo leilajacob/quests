@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'better_errors'
 gem 'cancancan'
 gem 'rolify'
+gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
