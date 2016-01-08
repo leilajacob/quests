@@ -32,7 +32,8 @@ gem 'font-awesome-rails'
 gem 'paperclip'
 
 gem 'better_errors'
-gem 'cancan'
+gem 'cancancan'
+gem 'rolify'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
