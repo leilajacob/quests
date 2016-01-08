@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div id="center-it" class="panel-body">
-	<p><%= image_tag @blog_post.avatar.url %></p>
+	<p><%= image_tag @blog_post.avatar.url, width: 700 %></p>
 	<p><%= @blog_post.blog_entry %></p>
 	<p>
 		by: <%= @blog_post.user.username %>
@@ -35,3 +35,4 @@
 
 
 <%= link_to 'Back', blog_posts_path %>
+<%= link_to 'New Post', new_blog_post_path %>

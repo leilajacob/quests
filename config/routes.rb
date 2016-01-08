@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :comments
   resources :blog_posts
+  get 'home' => 'home#index'
   root 'blog_posts#index'
 
   get 'archive' => 'blog_posts#index'
