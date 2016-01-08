@@ -11,7 +11,7 @@
 
 <% if can? :update, @blog_post %>
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-<%= link_to 'Destroy', edit_blog_post_path(@blog_post), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Destroy', blog_post_path(@blog_post), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %> 
 
 
@@ -35,4 +35,3 @@
 
 
 <%= link_to 'Back', blog_posts_path %>
-<%= link_to 'New Post', new_blog_post_path %>
