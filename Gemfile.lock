@@ -192,7 +192,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   paperclip
-  pg
+  pg (= 0.18.4)
   rails (= 4.2.4)
   rolify
   sass-rails (~> 5.0)
