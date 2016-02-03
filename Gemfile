@@ -57,13 +57,11 @@ group :development do
   gem 'spring'
 end
 
-
-group :development do
-	gem 'sqlite3'
-end
-
 group :production do
-	gem 'pg'
-	gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'aws-sdk', '< 2.0'
 end
+
+
 
